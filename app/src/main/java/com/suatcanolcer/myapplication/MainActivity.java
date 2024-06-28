@@ -1,6 +1,8 @@
 package com.suatcanolcer.myapplication;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,21 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    boolean isTrue = true;
+
+    public void changeImage(View view){
+        switchImage();
+    }
+
+    private void switchImage() {
+        ImageView imageView = findViewById(R.id.imageView);
+        if (isTrue) {
+            imageView.setImageResource(R.drawable.images22);
+        } else {
+            imageView.setImageResource(R.drawable.image11);
+        }
+        isTrue = !isTrue;
     }
 }
